@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start" : "node ./dist/shop-api/bin/www.js",
-    "postinstall": "npm-run-all -s populate-prod-db build-api",
+    "postinstall": "npm-run-all -s populate-prod-db build",
     "start-dev": "node ./dist/shop-api/bin/www.js",
     "build": "gulp build",
     "populate-test-db": "gulp populate-test-db",
