@@ -1,0 +1,43 @@
+
+.login-section{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -11em;
+    padding: 1ex 1em;
+    width: 24em;
+    color: #182d46;
+    background: #FFF;
+    border: 3px solid blue;
+}
+
+h1{
+    position:relative;
+    left:2em;
+}
+
+form{
+    float:left;
+    margin-top: 0.8em;
+    padding-left: 2em;
+}
+
+label{
+    float:left;
+    width: 6em;
+    text-align: right;
+}
+
+input{
+    margin-left: 1em;
+    margin-bottom: .5em
+}
+
+label#errorLabel{
+    color: #FF0000;
+    width: 19em;
+    text-align: left;
+    padding-left: 3em;
+    padding-bottom: 1em;
+}
+

@@ -8,6 +8,7 @@ import config from '../../../data/scripts/config/config';
 class MongoDBProvider{
     constructor(){
        this.db = monk(config.dbURI);
+       this.authDb = monk(config.authDbURI);
     }
 }
 

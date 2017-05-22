@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    section.login-section
+        h1 Books store administration
+        label#errorLabel !{failMessage}
+        form(method='POST')
+            label(for="login") Username:
+            input#login(type="text" name="username")
+            br
+            label(for="password") Password:
+            input#password(type="password" name="password")
+            br
+            label(for="submit") &nbsp
+            input#submit(type="submit" value="Login")
+            br
+

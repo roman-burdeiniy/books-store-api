@@ -4,8 +4,9 @@
 var config = require('./config/config');
 var Data = require('./mock-data');
 var MongoClient = require('mongodb').MongoClient;
+var removeCollection = require('./utils');
 
-function connect(){
+function generate(){
     MongoClient.connect(config.dbURI, function(err, db) {
         console.log("Connected to db");
         populateDB(db);
@@ -47,20 +48,6 @@ function populateDB(db){
         })
 }
 
-function removeCollection(coll){
-    var prom = new Promise(function (success, reject){
-        coll.drop()
-            .then(function(res){
-                success()
-            })
-            .catch(function(err){
-                console.log("Can't remove collection. Not found");
-                success();
-            })
-    })
-   return prom;
-}
-
-connect();
+generate();
 
 

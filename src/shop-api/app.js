@@ -9,6 +9,10 @@ var bodyParser = require('body-parser');
 var apiRoute = require('./routes/api-route-config');
 var winston = require('winston');
 var favicon = require('serve-favicon');
+var adminRoute = require('./routes/admin-route-config');
+import PassportManager from './managers/PassportManager';
+
+
 
 var app = express();
 
@@ -16,9 +20,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use("/shop-api/img", express.static(__dirname + '/img'));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
@@ -28,7 +34,10 @@ app.use('/shop-api', function(req, res, next) {
     next();
 });
 
+PassportManager.configure(app);
+
 app.use('/shop-api', apiRoute);
+app.use('/admin', adminRoute);
 
 
 
